@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-skill-cleaner"
+  short_description: "只读扫描 Skill 的提示注入、混淆指令、危险代码、数据外传与强制导流，支持安装前审查与可恢复隔离"
+  default_prompt: "使用 $san-skill-cleaner，只读扫描目标 Skill 并按严重/高风险/待复核/信息报告风险，隔离前先让我逐个确认。"

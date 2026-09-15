@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-decision"
+  short_description: "为长期业务和人生问题建立可回填、可复盘的决策工程"
+  default_prompt: "使用 $san-decision，帮我为这个长期问题建立决策记录和判断框架。"

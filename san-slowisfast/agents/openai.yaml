@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-slowisfast"
+  short_description: "区分该快与该慢，找出能沉淀可复利资产的慢方法并固化为资产卡"
+  default_prompt: "使用 $san-slowisfast，诊断我当前做法里哪些环节该慢、哪些该快，并给出可复利的慢方法。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-standard-answer"
+  short_description: "寻找可信理论、行业经验与反例，形成带条件的标准答案"
+  default_prompt: "使用 $san-standard-answer，帮我为这个问题寻找可靠的标准解法。"

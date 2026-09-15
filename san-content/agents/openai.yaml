@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-content"
+  short_description: "诊断已有内容能否发布，并定位最需要修改的问题"
+  default_prompt: "使用 $san-content，诊断这份内容能不能发布以及该怎么改。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-spread"
+  short_description: "分析内容的共鸣机制、受众情绪与有效传播动机"
+  default_prompt: "使用 $san-spread，帮我分析这份内容为什么能或不能传播。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "san-action"
+  short_description: "诊断知道该做却拖延、行动中断或执行受阻的原因"
+  default_prompt: "使用 $san-action，帮我诊断当前任务为什么迟迟推进不下去。"
