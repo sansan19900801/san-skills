@@ -128,6 +128,10 @@ san-skills 支持将你的本地文件夹变成 Agent 可以稳定调用的知�
 
 作者：[三三](https://github.com/sansan19900801)
 
+如需加入付费答疑群，可扫码联系：
+
+![付费答疑群二维码](docs/wechat-qrcode.jpg)
+
 ## 许可证
 
 本项目采用 [CC BY-NC 4.0](LICENSE) 许可证。
