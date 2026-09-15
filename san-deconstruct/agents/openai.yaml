@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-deconstruct"
-  short_description: "拆解模糊概念，澄清不同用法、边界与概念混用"
-  default_prompt: "使用 $san-deconstruct，帮我拆解并澄清这个概念。"

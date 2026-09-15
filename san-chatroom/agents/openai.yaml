@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-chatroom"
-  short_description: "按话题动态组建多专家研讨，主持人校准问题、逼出交锋、点破核心矛盾并收敛"
-  default_prompt: "使用 $san-chatroom，为当前话题选择合适的专家框架并开展多角色研讨。"

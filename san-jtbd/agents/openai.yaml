@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-jtbd"
-  short_description: "识别真实情境中的进展需求、选择力量和可观察标准"
-  default_prompt: "使用 $san-jtbd，帮我用 JTBD 澄清这个任务真正要推进什么。"

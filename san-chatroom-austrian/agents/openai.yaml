@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-chatroom-austrian"
-  short_description: "哈耶克与米塞斯从知识分散性、人类行为学两个固定视角分析同一问题，主持人收口"
-  default_prompt: "使用 $san-chatroom-austrian，让哈耶克和米塞斯分别用各自的分析镜头讨论当前问题，再由主持人收口。"

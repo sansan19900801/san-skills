@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-goal"
-  short_description: "把模糊愿望整理成可行动、可检查的目标和交付物"
-  default_prompt: "使用 $san-goal，帮我把这个目标澄清成可执行的交付。"

@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-knowledge"
-  short_description: "建立和维护可查找、可收录、可治理的本地知识库"
-  default_prompt: "使用 $san-knowledge，帮我整理和治理这个本地知识库。"

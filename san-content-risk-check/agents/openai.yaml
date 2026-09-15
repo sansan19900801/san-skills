@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-content-risk-check"
-  short_description: "逐句排查内容发布风险，并给出保留表达的最小修改"
-  default_prompt: "使用 $san-content-risk-check，检查这份内容的发布风险。"

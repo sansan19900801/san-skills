@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-benchmark"
-  short_description: "筛选值得模仿的对标，并排除主体差异造成的噪音"
-  default_prompt: "使用 $san-benchmark，帮我寻找并判断当前领域值得研究的对标。"

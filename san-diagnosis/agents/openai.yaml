@@ -1,4 +1,0 @@
-interface:
-  display_name: "san-diagnosis"
-  short_description: "识别具体商业困境或商业模式问题，并进入对应诊断"
-  default_prompt: "使用 $san-diagnosis，帮我诊断当前的商业问题。"
