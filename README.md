@@ -2,13 +2,16 @@
 
 > 面向一人公司创业者与内容创作者的中文 AI Skills 工具箱。把真实业务、内容与行动问题交给 Agent，获得清晰判断和可以立刻执行的下一步。
 
+[![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg?style=flat-square)](VERSION)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-16A34A.svg?style=flat-square)](LICENSE)
+
 **支持：豆包 Agent Plan、Codex、WorkBuddy，以及其他支持 Skills 的 Agent。**
 
-san-skills 由三三创建。从一人公司实战经验中筛选、结构化出的方法论，沉淀为 32 个可直接调用的 Skills。
+san-skills 由 [三三](https://github.com/sansan19900801) 创建。从一人公司实战经验中筛选、结构化出的方法论，沉淀为 32 个可直接调用的 Skills。
 
-[快速开始](#快速开始) · [安装](#安装) · [能力一览](#能力一览) · [更新日志](#更新日志)
+**v0.1.0 更新：** 首版发布，32 个 Skill 全部就位，覆盖商业诊断、内容创作、行动方法、知识管理四大类。
 
----
+[快速开始](#快速开始) · [安装](#安装) · [能力一览](#能力一览) · [完整使用手册](docs/新手入门.md) · [更新记录](https://github.com/sansan19900801/san-skills/commits/main)
 
 ## san-skills 解决什么问题
 
@@ -16,7 +19,7 @@ san-skills 由三三创建。从一人公司实战经验中筛选、结构化出
 
 | 真实处境 | 你会得到 |
 | --- | --- |
-| 不知道自己的商业模式哪里有问题 | 商业诊断、风险判断和验证动作 |
+| 客户总说贵，不知道该改价格、产品还是客群 | 商业模式诊断、风险判断和验证动作 |
 | 有一个选题，却做不出能被人看完的内容 | 内容方向、开头、标题与逐字稿优化 |
 | 知道该做什么，却迟迟推不动 | 对行动卡点的分析和一条可开始的动作 |
 | 反复面对同类选择，经验无法积累 | 可回填的决策记录、规律与阶段快照 |
@@ -59,14 +62,12 @@ san-skills 由三三创建。从一人公司实战经验中筛选、结构化出
 | 建立和治理文件夹知识库 | `/san-knowledge` | 知识库导航、版本规则、健康检查 |
 | 建立内容资产与多端 Agent 工作台 | `/san-content-system`、`/san-agent-migration`、`/san-install-skill` | 本地工程、主题地图与安装方案 |
 | 把反复问题制作成单个 Skill | `/san-skill-maker` | 可安装 Skill、分级验证结果与可选 GitHub 发布 |
-| 多视角讨论、想听不同意见 | `/san-chatroom`、`/san-chatroom-austrian` | 多专家研讨与观点碰撞 |
-| 慢方法诊断、判断是不是在走捷径 | `/san-slowisfast` | 问题识别与调整建议 |
-| JTBD 任务澄清 | `/san-jtbd` | 用户真实需求挖掘 |
-| 公众号排版 | `/san-wechat-html` | Markdown 转精美网页 |
-| AI 痕迹检测 | `/san-ai-check` | 文本 AI 写作特征扫描 |
-| Skill 体检 | `/san-skill-cleaner` | 只读扫描已安装 Skill 问题 |
+
+完整的 32 个 Skill、适用时机、输入示例和动态导航方式，见 [新手入门与 Skill 全目录](docs/新手入门.md)。
 
 ## 安装
+
+### 推荐：豆包、Codex、WorkBuddy 与其他支持 Skills 的 Agent
 
 在终端执行：
 
@@ -84,7 +85,7 @@ npx -y skills add sansan19900801/san-skills -g --all
 更新 san-skills
 ```
 
-它会同步官方版本，不会修改你的本地数据。
+它会同步官方版本，不会修改你在本地的存档、报告和决策记录。版本变化见 [提交记录](https://github.com/sansan19900801/san-skills/commits/main)。
 
 ## san-skills 怎样工作
 
@@ -110,10 +111,14 @@ san-skills 每次只处理一个当前任务。单个 Skill 能覆盖时保持�
 4. **先诊断后开方** — 先搞清楚问题，再给方案，不上来就给答案
 5. **行动导向** — 每个 Skill 的输出都要有"下一步可以做什么"
 
-## 更新日志
+## 作者与支持
 
-- **v0.1.0** · 初始版本 · 31 个子 Skill + 1 个总控 · 覆盖商业诊断、内容创作、行动方法、知识管理四大类
+作者：[三三](https://github.com/sansan19900801)
 
-## 关于
+## 许可证
 
-san 由三三创建并维护。从一人公司实战中沉淀的方法论，做成可复用的 AI Skills。
+本项目采用 [CC BY-NC 4.0](LICENSE) 许可证。
+
+- 个人使用、学习、研究与非商业项目可以直接使用。
+- 公开发布衍生作品时，请注明来源。
+- 商业用途需要单独授权，请联系作者。
