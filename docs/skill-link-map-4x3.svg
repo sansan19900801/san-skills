@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; fill: #2563EB; letter-spacing: 0.05em; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 28px; font-weight: 700; fill: #111827; }
+      .desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; fill: #6B7280; }
+      .step-num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; font-weight: 500; fill: #9CA3AF; letter-spacing: 0.05em; }
+      .step-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; font-weight: 700; fill: #111827; }
+      .step-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; fill: #6B7280; }
+      .step-desc-highlight { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; fill: #2563EB; font-weight: 500; }
+      .card-bg { fill: white; stroke: #E5E7EB; stroke-width: 2; rx: 16; ry: 16; }
+      .card-bg-active { fill: #2563EB; stroke: #2563EB; stroke-width: 2; rx: 16; ry: 16; }
+      .card-bg-result { fill: #EFF6FF; stroke: #BFDBFE; stroke-width: 2; rx: 16; ry: 16; }
+      .arrow { stroke: #93C5FD; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-head { fill: #93C5FD; }
+      .result-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; fill: #2563EB; }
+      .result-content { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 15px; font-weight: 600; fill: #111827; }
+      .result-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; fill: #6B7280; }
+      .principle-bg { fill: #F3F4F6; rx: 12; ry: 12; }
+      .principle-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; fill: #4B5563; }
+      .dot { fill: #2563EB; }
+    </style>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="680" fill="#F8FAFC" rx="0"/>
+
+  <!-- 标题 -->
+  <text x="60" y="50" class="title">SAN-SKILLS · 动态编排</text>
+  <text x="60" y="85" class="subtitle">每次只推进一个当前任务</text>
+  <text x="60" y="110" class="desc">单个 Skill 足够时保持简单，复杂任务使用主辅组合。</text>
+
+  <!-- 主流程卡片 -->
+  <!-- 01 INPUT -->
+  <rect x="60" y="160" width="180" height="100" class="card-bg"/>
+  <text x="80" y="190" class="step-num">01 · INPUT</text>
+  <text x="80" y="218" class="step-title">真实任务</text>
+  <text x="80" y="240" class="step-desc">材料、问题或新反馈</text>
+
+  <!-- 箭头 1 -->
+  <line x1="240" y1="210" x2="280" y2="210" class="arrow"/>
+  <polygon points="280,210 273,205 273,215" class="arrow-head"/>
+
+  <!-- 02 COMPOSE (高亮) -->
+  <rect x="290" y="150" width="200" height="120" class="card-bg-active"/>
+  <text x="310" y="180" style="font-family: -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #93C5FD; letter-spacing: 0.05em;">02 · COMPOSE</text>
+  <text x="310" y="208" style="font-family: -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: white;">/san</text>
+  <text x="310" y="230" style="font-family: -apple-system, sans-serif; font-size: 13px; fill: #BFDBFE;">读取上下文并编排</text>
+  <text x="310" y="250" style="font-family: -apple-system, sans-serif; font-size: 13px; fill: #BFDBFE;">最多 1 主 + 2 辅</text>
+
+  <!-- 箭头 2 -->
+  <line x1="490" y1="210" x2="530" y2="210" class="arrow"/>
+  <polygon points="530,210 523,205 523,215" class="arrow-head"/>
+
+  <!-- 03 PLAN -->
+  <rect x="540" y="160" width="200" height="100" class="card-bg"/>
+  <text x="560" y="190" class="step-num">03 · PLAN</text>
+  <text x="560" y="218" class="step-title">单项或主辅组合</text>
+  <text x="560" y="240" class="step-desc">最多 1 个主 Skill + 2 个辅助</text>
+
+  <!-- 箭头 3 -->
+  <line x1="740" y1="210" x2="780" y2="210" class="arrow"/>
+  <polygon points="780,210 773,205 773,215" class="arrow-head"/>
+
+  <!-- 04 OUTPUT -->
+  <rect x="790" y="160" width="200" height="100" class="card-bg"/>
+  <text x="810" y="190" class="step-num">04 · OUTPUT</text>
+  <text x="810" y="218" class="step-title">任务提示词</text>
+  <text x="810" y="240" class="step-desc">说明理由、分工与执行边界</text>
+
+  <!-- 向下箭头 -->
+  <line x1="890" y1="260" x2="890" y2="320" class="arrow"/>
+  <polygon points="890,320 885,313 895,313" class="arrow-head"/>
+
+  <!-- 结果反馈后三种状态 -->
+  <text x="60" y="320" class="result-title">结果反馈后的 3 种状态</text>
+
+  <!-- 状态1：没有完成 -->
+  <rect x="60" y="345" width="280" height="120" class="card-bg-result"/>
+  <text x="80" y="375" class="result-title">没有完成 / 出现新反馈</text>
+  <text x="80" y="400" class="result-content">回到 /san</text>
+  <text x="80" y="422" class="result-desc">带着本轮结论重新编排</text>
+  <text x="80" y="442" class="result-desc">无需重复描述材料</text>
+
+  <!-- 箭头到状态2 -->
+  <line x1="340" y1="405" x2="400" y2="405" class="arrow"/>
+  <polygon points="400,405 393,400 393,410" class="arrow-head"/>
+
+  <!-- 状态2：已经明确下一步 -->
+  <rect x="410" y="345" width="280" height="120" class="card-bg"/>
+  <text x="430" y="375" class="step-num" style="fill: #6B7280;">已经明确下一步</text>
+  <text x="430" y="400" class="step-title">尊重用户选择</text>
+  <text x="430" y="422" class="step-desc">直接进入明确指定的能力</text>
+
+  <!-- 箭头到状态3 -->
+  <line x1="690" y1="405" x2="750" y2="405" class="arrow"/>
+  <polygon points="750,405 743,400 743,410" class="arrow-head"/>
+
+  <!-- 状态3：当前任务已经完成 -->
+  <rect x="760" y="345" width="280" height="120" class="card-bg"/>
+  <text x="780" y="375" class="step-num" style="fill: #6B7280;">当前任务已经完成</text>
+  <text x="780" y="400" class="step-title">直接结束</text>
+  <text x="780" y="422" class="step-desc">没有新目标时不制造下一步</text>
+
+  <!-- 原则 -->
+  <rect x="60" y="520" width="980" height="40" class="principle-bg"/>
+  <circle cx="80" cy="540" r="5" class="dot"/>
+  <text x="95" y="545" class="principle-text">原则：一次只处理 1 个任务；组合只服务当前交付，不保存为固定长链。</text>
+
+</svg>

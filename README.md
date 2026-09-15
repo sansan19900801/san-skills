@@ -14,6 +14,9 @@ san-skills 由 [三三](https://github.com/sansan19900801) 创建。从一人公
 
 [快速开始](#快速开始) · [安装](#安装) · [能力一览](#能力一览) · [完整使用手册](docs/新手入门.md) · [更新记录](https://github.com/sansan19900801/san-skills/commits/main)
 
+
+![san-skills 动态编排图](docs/skill-link-map-4x3.svg)
+
 ## san-skills 解决什么问题
 
 你不需要先学会一套复杂的方法，也不需要知道该调用哪个工具。把当下的业务、内容、选择或卡点交给 `/san`，它会根据对话上下文判断单个 Skill 是否足够；复杂任务可以编排 1 个主 Skill 和最多 2 个辅助 Skill。
