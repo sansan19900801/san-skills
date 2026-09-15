@@ -3,6 +3,7 @@
 > 面向一人公司创业者与内容创作者的中文 AI Skills 工具箱。把真实业务、内容与行动问题交给 Agent，获得清晰判断和可以立刻执行的下一步。
 
 [![Version](https://img.shields.io/badge/version-0.1.0-2563EB.svg?style=flat-square)](VERSION)
+[![skills.sh](https://skills.sh/b/sansan19900801/san-skills)](https://skills.sh/sansan19900801/san-skills)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-16A34A.svg?style=flat-square)](LICENSE)
 
 **支持：豆包 Agent Plan、Codex、WorkBuddy，以及其他支持 Skills 的 Agent。**
