@@ -1,0 +1,263 @@
+{
+  "candidateId": "controller-ce561257-platform-8711323d-20260913T132434Z",
+  "baseline": "本机 dbs 2.18.40；controller-baseline.json",
+  "environment": {
+    "runtime": "Codex isolated agents for semantic samples; actual Hermes runtime with stubbed upstream for integration",
+    "actualModelId": "not exposed in isolated agent result",
+    "arkApiCalled": false,
+    "profile": "isolated temporary directories",
+    "changes": "test artifacts only; no controller, child Skill, runtime, model settings, user data or remote writes"
+  },
+  "snapshots": {
+    "source/skills/san/SKILL.md": "ce561257c844b0ccc469405914f563a2aeb8d464d84c12f04e3543cb37c5e36b",
+    "platform/hermes/skills/sanskill/san/SKILL.md": "8711323d278246d825c30bdc505a3d6ca549721fc8333d88f660ec8d4986c09f",
+    "platform/hermes/catalog.cjs": "1a10374c0bcb9b74b0f3bd60ffd7ac6c0327164ac6904b02a124f232dc176ed2",
+    "platform/hermes/bridge.cjs": "0c2b225820f0d0bf9f957b878518af8ba9354b6ec6b221efd01f916b24545989",
+    "platform/hermes/runner.py": "2716942dfbcfaace1802c80a2b93587f455a561035e5c7c91e53185ec6e3a122",
+    "platform/hermes/tools.cjs": "3256a317ad11c80385e8ea38d93bc54d7935bbc151d2364dff1516e4389705d7"
+  },
+  "behaviorContract": {
+    "scope": "No changes to controller, child skills, model settings or user data. No live paid API. Record test results only.",
+    "cases": [
+      {
+        "id": "single-title",
+        "prompt": "/san 我有一篇已经写好的小红书笔记，正文已经定稿，不用改正文。这次只想把标题改好，给我 5 个备选。现在的标题是「我用 AI 整理客户访谈的方法」。",
+        "must": [
+          "Select one sufficiently covering registered skill unless independent need evidenced",
+          "Read selected full skill",
+          "Return one executable followup prompt and stop",
+          "No invented claims or actual titles now"
+        ]
+      },
+      {
+        "id": "business-regression",
+        "prompt": "/san 我想在各个平台发一人创业和 AI 使用的内容，再卖 199 的知识星球。你帮我判断：我卖的到底是什么，用户为什么要付费？",
+        "must": [
+          "Select based on full task not fixed pair",
+          "Read selected full skills and composition contract if combo",
+          "No fabricated demographics results annual duration or guaranteed sales",
+          "Prompt preserves leaf questions evidence stops",
+          "Recommend and stop no substantive diagnosis now"
+        ]
+      },
+      {
+        "id": "phase-continuation",
+        "must": [
+          "Initial task recommend",
+          "Explicit child prompt execute",
+          "Ordinary answer to active child question remains execute"
+        ],
+        "expected": "execute"
+      },
+      {
+        "id": "formatted-generated-prompt",
+        "must": [
+          "Copy full generated prompt respecting original controller possible quoted bold / name formatting enters execute"
+        ],
+        "expected": "execute"
+      }
+    ]
+  },
+  "mechanical": {
+    "controllerBrandOnly": true,
+    "platformException": "administrator-managed updates",
+    "registeredChildren": 31,
+    "allChildFilesCompared": 178,
+    "sourcePlatformChildrenEqual": true,
+    "unitTests": {
+      "passed": 25,
+      "failed": 0
+    },
+    "discoveryUpdateTests": {
+      "passed": 14,
+      "failed": 0
+    },
+    "hermesExistingIntegration": {
+      "passed": true,
+      "engine": "real",
+      "upstream": "stub",
+      "checks": [
+        "complete controller in model payload",
+        "complete selected single/multi Skill payload",
+        "composition contract payload for multi selection only",
+        "recommendation stops",
+        "confirmed isolated save",
+        "confirmed memory survives next process"
+      ]
+    }
+  },
+  "tests": [
+    {
+      "id": "single-title",
+      "type": "normal",
+      "result": "pass for recommendation behavior",
+      "executor": "fresh isolated Codex agent, no expected answers provided",
+      "selected": [
+        "san-xhs-title"
+      ],
+      "read": [
+        "skills/san/SKILL.md",
+        "skills/san-xhs-title/SKILL.md"
+      ],
+      "tools": [
+        "update script with SAN_UPDATE_URL empty (no output)",
+        "discovery script"
+      ],
+      "actualOutput": "推荐：`/san-xhs-title`\n\n选择理由：它专门优化小红书标题，能够直接覆盖这次“正文已定稿，只要 5 个标题备选”的任务。\n\n可直接发送的提示词：\n\n> 使用 `/san-xhs-title`。\n> 我有一篇已经定稿的小红书笔记，只优化标题，不修改正文。\n> 现在的标题是「我用 AI 整理客户访谈的方法」。\n> 请先确认目标读者，再根据合适的标题公式提供恰好 5 个备选，每个标题不超过 20 字（含标点），标注公式编号和简短理由，并从中推荐 Top 3。\n> 标题须与正文事实相符，不编造步骤数量、节省时间、效率提升或案例结果。如需正文核对，只将其作为标题优化的参考材料。",
+      "judgment": "Single covering Skill, complete read and next prompt, no actual titles generated; no false efficacy claims. This checks orchestration, not final title quality."
+    },
+    {
+      "id": "business-regression",
+      "type": "regression",
+      "result": "pass for recommendation behavior",
+      "executor": "fresh isolated Codex agent, no expected answers provided",
+      "selected": [
+        "san-jtbd"
+      ],
+      "read": [
+        "skills/san/SKILL.md",
+        "skills/san-jtbd/SKILL.md"
+      ],
+      "tools": [
+        "update script with SAN_UPDATE_URL empty (no output)",
+        "discovery script"
+      ],
+      "actualOutput": "推荐：`/san-jtbd`\n\n选择理由：它能从用户遇到的具体处境、想得到的改变和选择标准出发，判断你的付费产品应该交付什么，以及用户为什么愿意付费。\n\n可直接发送的提示词：\n\n> 使用 `/san-jtbd`。\n> 我计划在各个平台发布一人创业和 AI 使用的内容，再卖定价 199 元的知识星球。请帮我判断：我卖的到底是什么，用户为什么要付费？\n> 请从潜在用户遇到的具体事情入手，梳理他们希望获得的改变、目前采用的替代办法，以及什么条件会让他们愿意付费。把这些判断落实到知识星球需要提供的具体交付和可观察的价值，并说明公开内容与付费交付如何衔接。\n> 目前没有提供真实客户案例、购买记录或星球权益。请明确区分已知事实与待验证假设，不虚构需求、购买动机、现有权益或收费周期。信息不足时先给出可用的假设版本；只有缺口会改变判断时，才问一个具体问题。\n> 最终给出一份对“卖什么、为什么付费”的判断，以及一个检验核心付费假设的最小行动。",
+      "judgment": "JTBD description/body covers product task and willingness-to-pay assumptions. No requirement for fixed diagnosis+jtbd. Recommendation stops and preserves uncertainty. Not proof that every viable selector must choose this same Skill."
+    },
+    {
+      "id": "phase-followup-diagnosis",
+      "type": "boundary/regression",
+      "result": "fail",
+      "engine": "actual exported phaseFor, no model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "使用 `/san-diagnosis`。帮我判断我卖的是什么，为什么有人付费？"
+        },
+        {
+          "role": "assistant",
+          "content": "你是否已经向用户交付过这项服务？请说一个实际案例。"
+        },
+        {
+          "role": "user",
+          "content": "我已经帮助两位客户梳理了 AI 工作流程，但还没有卖过知识星球。"
+        }
+      ],
+      "expected": "execute",
+      "actual": "recommend",
+      "syntheticData": true
+    },
+    {
+      "id": "phase-followup-learning",
+      "type": "boundary",
+      "result": "fail",
+      "engine": "actual exported phaseFor, no model",
+      "messages": [
+        {
+          "role": "user",
+          "content": "使用 /san-learning 帮我学习商业模式。"
+        },
+        {
+          "role": "assistant",
+          "content": "这一篇先停在这里。请用自己的话说明价值主张和产品载体有什么区别。"
+        },
+        {
+          "role": "user",
+          "content": "价值主张是帮助客户完成的改变，产品载体是课程、工具或社群这样的形式。"
+        }
+      ],
+      "expected": "execute",
+      "actual": "recommend",
+      "syntheticData": true
+    },
+    {
+      "id": "hermes-followup-protocol",
+      "type": "integration fault reproduction",
+      "result": "fail",
+      "engine": "real Hermes; upstream stub",
+      "messages": [
+        {
+          "role": "user",
+          "content": "使用 /san-jtbd 判断 199 元知识星球的付费任务。"
+        },
+        {
+          "role": "assistant",
+          "content": "请补充一位潜在客户上次遇到这个问题时的具体经历。"
+        },
+        {
+          "role": "user",
+          "content": "测试案例：一位自由职业者收集了客户访谈，却整理不出可执行的改进项，过去靠手工标注。"
+        }
+      ],
+      "actual": {
+        "test": "active-child-followup",
+        "externalModel": "stubbed; no paid API",
+        "expected": "continue active child execution",
+        "seen": [
+          {
+            "phase": "recommend",
+            "tools": [
+              "san_route"
+            ],
+            "historyContainsOriginalPrompt": true
+          },
+          {
+            "phase": "recommend",
+            "tools": [
+              "san_finish_recommendation",
+              "san_route",
+              "san_skill"
+            ],
+            "historyContainsOriginalPrompt": true
+          }
+        ],
+        "result": {
+          "completed": false,
+          "error": "模型未按推荐协议结束；请重试。"
+        }
+      },
+      "judgment": "Original explicit child invocation still appears in model history, but host injects recommend phase and rejects ordinary child response. The stub proves deterministic protocol behavior only, not the answer that Ark would generate."
+    },
+    {
+      "id": "business-child-execution",
+      "type": "behavior smoke",
+      "result": "pass for evidence boundary and execution",
+      "executor": "same isolated agent after user sends generated prompt",
+      "phase": "execute",
+      "actualOutput": "我的初步建议是：把 199 元星球的价值落到“帮助一个人在自己的业务里，用 AI 完成一件具体工作”。这是待验证的产品假设；目前还不能断言用户会为它付费。\n\n已知事实只有：你准备发布一人创业和 AI 使用的内容，并考虑售卖 199 元的知识星球。目标买家、现有交付、你的成功案例和实际购买意愿都还没有证据。\n\n先拿一个具体场景检验这个假设：\n\n一个人已经在做咨询或其他服务。他想通过内容介绍自己的业务，但每次打开 AI，生成的文章都很泛，改了半天也用不上。他希望把日常遇到的客户问题，做成能准确体现自己服务价值、可以发布的内容。\n\n这个场景中的任务可以写成：\n\n> 当我独自经营业务、需要持续发布内容时，我想把真实客户问题转成准确、可用的内容，以便让潜在客户理解我能解决什么，同时减少反复试错的时间。\n\n这包含实际进展，也可能包含“终于知道该怎么做”的踏实感，以及“让客户觉得我有专业判断”的期待。后两项目前同样是假设。\n\n他现在可能选择自己摸索 AI、收集免费教程、购买课程，或者暂时不发。你需要证明：你的交付能在其中某一步，带来他实际感受到的改善。\n\n例如，星球可以围绕这个任务提供以下交付。它们是设计建议，不代表你已经提供：\n\n| 建议交付 | 用户可以检查的价值 |\n|---|---|\n| 一个真实任务从原始材料到成品的完整案例 | 能看见输入、修改过程和最终质量，判断是否适合自己 |\n| 可填写的材料模板与配套提示词 | 能把自己的业务信息放进去，得到可继续修改的初稿 |\n| 常见失败示例与修改方法 | 遇到空泛、失真或偏题时，知道如何调整 |\n| 成品检查清单 | 能判断内容是否准确、是否说清服务价值、是否适合发布 |\n\n如果你确实愿意且有能力提供反馈，针对用户作品的答疑可能进一步降低卡住的概率。但这会增加持续交付成本，需要单独判断，不能先默认包含在 199 元里。\n\n用户愿意付费，需要几个条件同时成立：\n\n- 他近期确实要完成这件事，现有办法已经造成了具体困扰。\n- 样例与他的业务足够接近，他能判断自己用得上。\n- 他能看清购买后得到什么、需要自己投入多少，以及哪些问题不在交付范围内。\n- 他认为获得的帮助值得这 199 元，也值得花时间使用。\n\n旧方法虽然麻烦，但熟悉、免费；新星球可能让他担心“又买了一堆资料”“还是不会用”。所以，增加资料数量未必能促成购买。一个可以试用、能看见结果的完整样例，可能更有说服力。这仍需要实际验证。\n\n公开内容与付费交付可以这样衔接：公开内容完整演示一个问题怎样解决，让人看到你的判断和能力；星球提供围绕同一类任务组织好的案例、材料和检查方法，方便用户带着自己的业务反复使用。两边服务同一个人、同一类工作，付费理由才更容易讲清楚。\n\n检验这个核心假设的最小行动，是做一次小范围试售验证：\n\n选一个你已经做出结果的任务，准备一份完整样例，再写一段明确的 199 元交付说明，写清内容数量、服务期限和是否答疑。找 3—5 位近期确实做过这类任务的人，先听他们上一次卡在哪里，再展示样例和价格，观察是否愿意实际购买，并记录购买或拒绝的具体原因。\n\n这只能提供初步信号。如果他们喜欢你的内容，却不愿意为这个任务付费，就需要回头检查任务是否足够重要、交付是否可信、对象是否合适；目前没有依据把原因直接归为价格。",
+      "judgment": "Explicitly labels product/user scenarios as assumptions; separates suggested benefits from known product facts; no invented income, purchase rates, annual term or guaranteed sales. Has task statement, alternatives, choice criteria, barriers and small validation. Only this evidence-boundary sample passed; not validating actual business demand.",
+      "tools": [],
+      "readContext": "san-jtbd full body already read in same conversation"
+    },
+    {
+      "id": "business-child-natural-followup",
+      "type": "behavior smoke continuation",
+      "result": "pass",
+      "executor": "same isolated agent without /san or /san-jtbd in user followup",
+      "prompt": "我补充一点：我想服务的是还没开始创业的人。他们收藏了很多 AI 教程，但不知道先做什么。我自己目前也没有稳定的创业收入，所以我不能说自己已经跑通赚钱路径。",
+      "syntheticData": true,
+      "actualOutput": "这条补充会改变前面的产品假设。你要服务的是尚未开始、被大量教程困住的人，之前“已有业务、用 AI 做获客内容”的场景不再适用。\n\n现在可以优先验证的定位是：帮助准备创业的人选定一个小尝试，用 AI 做出样品，并获得第一次真实反馈。199 元对应的是这段起步支持；是否有人愿意付费，还需要验证。\n\n根据你提供的信息，可以把用户任务暂时写成：\n\n> 当我想尝试创业、收藏了很多 AI 教程，却不知道从哪里开始时，我想选出一件适合当前条件的小事并实际做完，以便知道自己遇到了什么问题、接下来是否值得继续投入。\n\n这里的“做完”需要有具体结果。例如，一位想尝试资料整理服务的人，做出一份可展示的整理样品，再请一位可能需要它的人评价是否有用。这个例子只说明验证方式，不能据此判断资料整理就是适合他们的创业方向。\n\n你的星球可以围绕这段进展设计交付：\n\n| 建议交付 | 用户能检查的结果 |\n|---|---|\n| 结合已有经验、可用时间和接触得到的人，选择一个小尝试的工具 | 能说清本次做什么、给谁用、投入到哪里就停 |\n| 一个你亲自完成过的完整示范，附材料和 AI 操作过程 | 能照着做出自己的第一份样品 |\n| 样品检查与获取反馈的方法 | 能发现具体问题，获得来自潜在使用者的反馈 |\n| 一份简短复盘模板 | 能根据反馈决定修改、继续或暂停，并说明理由 |\n\n这些都是建议权益，尚未确认你已经具备或愿意持续提供。尤其是个别反馈、陪跑和答疑，会产生实际时间成本，需要先估算再纳入价格。\n\n用户可能愿意付费的原因，是他已经受够了“学了很多仍没有行动”，希望有人帮助自己缩小选择、完成一次尝试。但“收藏很多教程”本身还不足以证明付费需求：有些人只是在探索兴趣，有些人享受学习，也有人近期没有行动的打算。\n\n因此，更值得验证的对象是：近期确实想完成一次尝试，而且已经因为不知道怎么开始而停住的人。他可能需要起步支持，也可能缺时间、缺某项基础能力，或者尚未决定是否创业。具体原因不同，交付就会不同。\n\n你没有稳定创业收入，意味着目前缺少用持续经营结果证明方法的证据。你仍可以检验自己能否提供有效的起步支持，但承诺范围应当落在你实际做过、能够示范和帮助别人完成的事情上。“跑通赚钱路径”“带你实现收入”目前没有依据；第一份样品、一次反馈也不能当作商业模式已经成立。\n\n公开内容可以展示你真实尝试了什么、怎么使用 AI、哪里失败、如何调整。付费交付则围绕同一类起步任务，把选择、示范、操作和复盘组织起来。用户应当能够从公开样例判断你的帮助是否适合自己。\n\n最小验证动作可以是一轮范围明确的 199 元试点：先做出一个你亲自完成的示范，再向 3—5 位近期想行动的人展示它，并说明本轮具体帮助完成什么、持续多久、包含多少反馈。观察他们是否愿意实际购买，以及购买后能否完成约定结果。\n\n这轮要分别检验两个问题：用户是否愿意为起步支持付费；你是否能稳定交付这种支持。现阶段，这两项都应保留为待验证事项。",
+      "judgment": "Keeps current child and revises scenario upon new facts; rejects unsupported earnings claims without inventing business outcomes; does not return to controller recommendation.",
+      "tools": [],
+      "readContext": "same fully-read san-jtbd"
+    }
+  ],
+  "cause": {
+    "source": "platform integration",
+    "file": "hermes/catalog.cjs:51",
+    "observation": "Only last message prefix determines phase; earlier active child state is ignored.",
+    "consequence": "hermes/bridge.cjs:34 removes execution tools, and :80 rejects a business response in recommend phase.",
+    "minimumFixProposal": "Preserve active task/child execution state across natural follow-ups; return to /san recommendation only per original handoff rules. No fixed pair or modifications to child methods.",
+    "implemented": false
+  },
+  "highestEvidence": "Level 2 behavior smoke for source controller; overall platform acceptance failed",
+  "limits": [
+    "Not all 31 children executed",
+    "No live Ark API response or latency test",
+    "No blind combination behavioral test this round; combination payload tested with stub",
+    "No desktop UI regression this round",
+    "General structural validator not rerun; file checks are not proof of model compliance",
+    "formatted-generated-prompt candidate not executed"
+  ]
+}

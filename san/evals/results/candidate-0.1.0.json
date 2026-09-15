@@ -1,0 +1,35 @@
+{
+  "baseline": "dbs 2.18.40 rules plus existing sansan controller",
+  "candidate": "sha256:2d7fff48935686a7902f9672d6d05d44a5048ff704014373257b1dad8109b6ad",
+  "environment": "local Python3 and Node; no paid model calls",
+  "highest_level": 1,
+  "structure": "controller passed dbs-skill-maker validator",
+  "mechanical_regression": "6 tests passed",
+  "cases": [
+    {
+      "id": "normal-concept",
+      "status": "not_run",
+      "actual_output": null
+    },
+    {
+      "id": "boundary-unclear",
+      "status": "not_run",
+      "actual_output": null
+    },
+    {
+      "id": "negative-image",
+      "status": "not_run",
+      "actual_output": null
+    },
+    {
+      "id": "holdout-review",
+      "status": "not_run",
+      "actual_output": null
+    }
+  ],
+  "limitations": [
+    "model recommendation and confirmation behavior not tested",
+    "not installed to global Agent",
+    "not published"
+  ]
+}
