@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "prompt": "我做宝妈收纳咨询，客户总觉得贵，我该调整什么？",
+      "routing_signals": [
+        "客户觉得贵",
+        "定价"
+      ],
+      "expected_primary": "san-diagnosis"
+    },
+    {
+      "prompt": "帮我找3个同赛道的对标账号",
+      "routing_signals": [
+        "对标账号"
+      ],
+      "expected_primary": "san-benchmark"
+    },
+    {
+      "prompt": "我想讲普通人别急着做IP，这个选题怎样做成内容？",
+      "routing_signals": [
+        "选题",
+        "做成内容"
+      ],
+      "expected_primary": "san-content"
+    },
+    {
+      "prompt": "短视频前20秒留不住人，帮我优化开头",
+      "routing_signals": [
+        "开头",
+        "留不住人"
+      ],
+      "expected_primary": "san-hook"
+    },
+    {
+      "prompt": "我在纠结要不要辞职创业",
+      "routing_signals": [
+        "纠结",
+        "选哪个"
+      ],
+      "expected_primary": "san-decision"
+    },
+    {
+      "prompt": "知道该做但就是推不动，怎么办？",
+      "routing_signals": [
+        "推不动",
+        "拖延"
+      ],
+      "expected_primary": "san-action"
+    },
+    {
+      "prompt": "这个概念我听不懂，能不能拆清楚？",
+      "routing_signals": [
+        "拆清楚",
+        "听不懂"
+      ],
+      "expected_primary": "san-deconstruct"
+    },
+    {
+      "prompt": "帮我把这个文件夹变成知识库",
+      "routing_signals": [
+        "知识库",
+        "文件夹"
+      ],
+      "expected_primary": "san-knowledge"
+    },
+    {
+      "prompt": "这篇稿子发之前帮我检查一下",
+      "routing_signals": [
+        "发之前",
+        "检查"
+      ],
+      "expected_primary": "san-content-risk-check"
+    },
+    {
+      "prompt": "为什么我写的内容没人转？",
+      "routing_signals": [
+        "没人转",
+        "传播"
+      ],
+      "expected_primary": "san-spread"
+    },
+    {
+      "prompt": "把我这一周的素材整理成5个母题",
+      "routing_signals": [
+        "素材整理",
+        "母题"
+      ],
+      "expected_primary": "san-content-system"
+    },
+    {
+      "prompt": "帮我生成7个小红书爆款标题",
+      "routing_signals": [
+        "小红书标题",
+        "爆款标题"
+      ],
+      "expected_primary": "san-xhs-title"
+    }
+  ]
+}

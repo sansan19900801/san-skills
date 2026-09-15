@@ -1,0 +1,694 @@
+{
+  "schema_version": "1.0",
+  "routing_policy": {
+    "max_primary_playbooks": 1,
+    "max_supporting_playbooks": 2,
+    "low_confidence_action": "ask_one_material_question",
+    "selection_order": [
+      "intent",
+      "category",
+      "required_inputs",
+      "requested_output"
+    ],
+    "always_load_selected_only": true
+  },
+  "routes": [
+    {
+      "id": "san-diagnosis",
+      "file": "san-diagnosis.md",
+      "role": "primary",
+      "category": "business",
+      "signals": [
+        "商业模式",
+        "卡点诊断",
+        "生意问题",
+        "赚不到钱",
+        "客户觉得贵",
+        "定价问题",
+        "模式梳理"
+      ],
+      "required_inputs": [
+        "business_situation"
+      ],
+      "outputs": [
+        "diagnosis",
+        "risk_points",
+        "next_actions"
+      ],
+      "companions": [
+        "san-benchmark",
+        "san-decision"
+      ]
+    },
+    {
+      "id": "san-benchmark",
+      "file": "san-benchmark.md",
+      "role": "primary",
+      "category": "research",
+      "signals": [
+        "对标",
+        "竞品",
+        "同行",
+        "找账号",
+        "拆爆款",
+        "研究对手"
+      ],
+      "required_inputs": [
+        "niche_or_topic"
+      ],
+      "outputs": [
+        "benchmark_list",
+        "learning_points"
+      ],
+      "companions": [
+        "san-content"
+      ]
+    },
+    {
+      "id": "san-content",
+      "file": "san-content.md",
+      "role": "primary",
+      "category": "content",
+      "signals": [
+        "内容创作",
+        "写文案",
+        "选题",
+        "改稿子",
+        "内容诊断",
+        "做内容"
+      ],
+      "required_inputs": [
+        "topic_or_draft"
+      ],
+      "outputs": [
+        "content_direction",
+        "structure",
+        "opening"
+      ],
+      "companions": [
+        "san-hook",
+        "san-xhs-title",
+        "san-resonate"
+      ]
+    },
+    {
+      "id": "san-hook",
+      "file": "san-hook.md",
+      "role": "supporting",
+      "category": "content",
+      "signals": [
+        "开头",
+        "前三秒",
+        "短视频开头",
+        "hook",
+        "留人",
+        "第一句"
+      ],
+      "required_inputs": [
+        "draft_or_topic"
+      ],
+      "outputs": [
+        "hook_options"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-xhs-title",
+      "file": "san-xhs-title.md",
+      "role": "supporting",
+      "category": "content",
+      "signals": [
+        "小红书标题",
+        "标题",
+        "爆款标题",
+        "xhs标题"
+      ],
+      "required_inputs": [
+        "topic_or_draft"
+      ],
+      "outputs": [
+        "title_options"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-decision",
+      "file": "san-decision.md",
+      "role": "primary",
+      "category": "decision",
+      "signals": [
+        "决策",
+        "选择",
+        "纠结",
+        "选哪个",
+        "取舍",
+        "判断"
+      ],
+      "required_inputs": [
+        "options_and_context"
+      ],
+      "outputs": [
+        "decision_framework",
+        "recommendation"
+      ],
+      "companions": [
+        "san-goal",
+        "san-deconstruct"
+      ]
+    },
+    {
+      "id": "san-action",
+      "file": "san-action.md",
+      "role": "primary",
+      "category": "action",
+      "signals": [
+        "行动拖延",
+        "推不动",
+        "执行力差",
+        "拖延",
+        "知道但做不到"
+      ],
+      "required_inputs": [
+        "stuck_situation"
+      ],
+      "outputs": [
+        "blockers",
+        "first_action"
+      ],
+      "companions": [
+        "san-goal"
+      ]
+    },
+    {
+      "id": "san-goal",
+      "file": "san-goal.md",
+      "role": "supporting",
+      "category": "clarity",
+      "signals": [
+        "目标模糊",
+        "不知道要啥",
+        "目标澄清",
+        "方向不明"
+      ],
+      "required_inputs": [
+        "vague_goal"
+      ],
+      "outputs": [
+        "clear_goal",
+        "success_criteria"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-good-question",
+      "file": "san-good-question.md",
+      "role": "supporting",
+      "category": "clarity",
+      "signals": [
+        "问题太模糊",
+        "不会问问题",
+        "好问题",
+        "把问题改对"
+      ],
+      "required_inputs": [
+        "vague_question"
+      ],
+      "outputs": [
+        "reframed_questions"
+      ],
+      "companions": [
+        "san-goal"
+      ]
+    },
+    {
+      "id": "san-deconstruct",
+      "file": "san-deconstruct.md",
+      "role": "supporting",
+      "category": "thinking",
+      "signals": [
+        "概念拆解",
+        "看不懂",
+        "拆清楚",
+        "什么是",
+        "底层逻辑"
+      ],
+      "required_inputs": [
+        "concept_or_idea"
+      ],
+      "outputs": [
+        "deconstruction",
+        "clear_definition"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-learning",
+      "file": "san-learning.md",
+      "role": "primary",
+      "category": "learning",
+      "signals": [
+        "学习",
+        "想搞懂",
+        "课题",
+        "内化",
+        "读书辅助"
+      ],
+      "required_inputs": [
+        "topic"
+      ],
+      "outputs": [
+        "learning_plan",
+        "articles"
+      ],
+      "companions": [
+        "san-deconstruct",
+        "san-knowledge"
+      ]
+    },
+    {
+      "id": "san-knowledge",
+      "file": "san-knowledge.md",
+      "role": "primary",
+      "category": "knowledge",
+      "signals": [
+        "知识库",
+        "建知识库",
+        "查笔记",
+        "资料整理",
+        "文件夹知识库"
+      ],
+      "required_inputs": [
+        "folder_or_topic"
+      ],
+      "outputs": [
+        "knowledge_structure",
+        "navigation_rules"
+      ],
+      "companions": [
+        "san-content-system"
+      ]
+    },
+    {
+      "id": "san-save",
+      "file": "san-save.md",
+      "role": "supporting",
+      "category": "memory",
+      "signals": [
+        "保存状态",
+        "存档",
+        "记下来",
+        "下次继续"
+      ],
+      "required_inputs": [
+        "current_state"
+      ],
+      "outputs": [
+        "saved_record"
+      ],
+      "companions": [
+        "san-restore",
+        "san-report"
+      ]
+    },
+    {
+      "id": "san-restore",
+      "file": "san-restore.md",
+      "role": "supporting",
+      "category": "memory",
+      "signals": [
+        "恢复",
+        "接着上次",
+        "继续",
+        "恢复状态"
+      ],
+      "required_inputs": [
+        "record_id"
+      ],
+      "outputs": [
+        "restored_context"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-report",
+      "file": "san-report.md",
+      "role": "supporting",
+      "category": "memory",
+      "signals": [
+        "复盘报告",
+        "整理记录",
+        "汇总",
+        "报告"
+      ],
+      "required_inputs": [
+        "saved_records"
+      ],
+      "outputs": [
+        "summary_report"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-content-risk-check",
+      "file": "san-content-risk-check.md",
+      "role": "gate",
+      "category": "compliance",
+      "signals": [
+        "发布前检查",
+        "安检",
+        "敏感词",
+        "违规",
+        "风险"
+      ],
+      "required_inputs": [
+        "finished_content"
+      ],
+      "outputs": [
+        "risk_report",
+        "safe_rewrite"
+      ],
+      "companions": [
+        "san-resonate"
+      ]
+    },
+    {
+      "id": "san-resonate",
+      "file": "san-resonate.md",
+      "role": "supporting",
+      "category": "content",
+      "signals": [
+        "共鸣",
+        "打动人",
+        "情绪价值",
+        "没感觉"
+      ],
+      "required_inputs": [
+        "draft"
+      ],
+      "outputs": [
+        "resonance_analysis",
+        "improvements"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-spread",
+      "file": "san-spread.md",
+      "role": "primary",
+      "category": "content",
+      "signals": [
+        "传播",
+        "为什么没人转",
+        "传播力",
+        "分享意愿"
+      ],
+      "required_inputs": [
+        "content"
+      ],
+      "outputs": [
+        "spread_analysis",
+        "spread_points"
+      ],
+      "companions": [
+        "san-resonate",
+        "san-script-flow"
+      ]
+    },
+    {
+      "id": "san-script-flow",
+      "file": "san-script-flow.md",
+      "role": "supporting",
+      "category": "content",
+      "signals": [
+        "逐字稿衔接",
+        "段落跳",
+        "不顺",
+        "逻辑衔接"
+      ],
+      "required_inputs": [
+        "script"
+      ],
+      "outputs": [
+        "flow_analysis",
+        "transitions"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-standard-answer",
+      "file": "san-standard-answer.md",
+      "role": "primary",
+      "category": "thinking",
+      "signals": [
+        "标准答案",
+        "理论溯源",
+        "底层逻辑",
+        "找依据",
+        "理论支撑"
+      ],
+      "required_inputs": [
+        "question"
+      ],
+      "outputs": [
+        "theory_anchors",
+        "case_matrix",
+        "conditional_answer"
+      ],
+      "companions": [
+        "san-deconstruct"
+      ]
+    },
+    {
+      "id": "san-chatroom",
+      "file": "san-chatroom.md",
+      "role": "primary",
+      "category": "discussion",
+      "signals": [
+        "多专家",
+        "研讨",
+        "不同角度",
+        "想听不同意见",
+        "聊一聊"
+      ],
+      "required_inputs": [
+        "topic"
+      ],
+      "outputs": [
+        "multi_perspective_discussion"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-chatroom-austrian",
+      "file": "san-chatroom-austrian.md",
+      "role": "supporting",
+      "category": "discussion",
+      "signals": [
+        "奥派经济学",
+        "哈耶克",
+        "米塞斯",
+        "经济学视角"
+      ],
+      "required_inputs": [
+        "topic"
+      ],
+      "outputs": [
+        "austrian_analysis"
+      ],
+      "companions": [
+        "san-deconstruct"
+      ]
+    },
+    {
+      "id": "san-slowisfast",
+      "file": "san-slowisfast.md",
+      "role": "primary",
+      "category": "method",
+      "signals": [
+        "走捷径",
+        "慢方法",
+        "欲速则不达",
+        "是不是在绕远路"
+      ],
+      "required_inputs": [
+        "current_approach"
+      ],
+      "outputs": [
+        "approach_diagnosis",
+        "slower_faster_path"
+      ],
+      "companions": [
+        "san-decision"
+      ]
+    },
+    {
+      "id": "san-jtbd",
+      "file": "san-jtbd.md",
+      "role": "supporting",
+      "category": "business",
+      "signals": [
+        "JTBD",
+        "用户需求",
+        "任务澄清",
+        "用户到底要什么"
+      ],
+      "required_inputs": [
+        "product_or_service"
+      ],
+      "outputs": [
+        "job_to_be_done",
+        "user_context"
+      ],
+      "companions": [
+        "san-diagnosis"
+      ]
+    },
+    {
+      "id": "san-content-system",
+      "file": "san-content-system.md",
+      "role": "primary",
+      "category": "system",
+      "signals": [
+        "内容系统",
+        "内容资产",
+        "散乱稿子",
+        "素材整理",
+        "内容工程"
+      ],
+      "required_inputs": [
+        "content_files"
+      ],
+      "outputs": [
+        "content_system_structure",
+        "workflow"
+      ],
+      "companions": [
+        "san-knowledge"
+      ]
+    },
+    {
+      "id": "san-skill-maker",
+      "file": "san-skill-maker.md",
+      "role": "primary",
+      "category": "tools",
+      "signals": [
+        "造Skill",
+        "做新Skill",
+        "把问题做成工具",
+        "反复遇到的问题"
+      ],
+      "required_inputs": [
+        "repeated_problem"
+      ],
+      "outputs": [
+        "new_skill_package"
+      ],
+      "companions": [
+        "san-content-system"
+      ]
+    },
+    {
+      "id": "san-install-skill",
+      "file": "san-install-skill.md",
+      "role": "supporting",
+      "category": "tools",
+      "signals": [
+        "安装Skill",
+        "装Skill",
+        "批量安装"
+      ],
+      "required_inputs": [
+        "skill_list_or_source"
+      ],
+      "outputs": [
+        "installation_result"
+      ],
+      "companions": [
+        "san-skill-cleaner"
+      ]
+    },
+    {
+      "id": "san-skill-cleaner",
+      "file": "san-skill-cleaner.md",
+      "role": "supporting",
+      "category": "tools",
+      "signals": [
+        "Skill体检",
+        "扫描Skill",
+        "检查Skill问题"
+      ],
+      "required_inputs": [
+        "skill_path"
+      ],
+      "outputs": [
+        "scan_report"
+      ],
+      "companions": []
+    },
+    {
+      "id": "san-agent-migration",
+      "file": "san-agent-migration.md",
+      "role": "supporting",
+      "category": "tools",
+      "signals": [
+        "迁移",
+        "换Agent平台",
+        "规则文件检查",
+        "审计"
+      ],
+      "required_inputs": [
+        "project_path"
+      ],
+      "outputs": [
+        "migration_audit",
+        "gap_report"
+      ],
+      "companions": [
+        "san-skill-cleaner"
+      ]
+    },
+    {
+      "id": "san-wechat-html",
+      "file": "san-wechat-html.md",
+      "role": "supporting",
+      "category": "content",
+      "signals": [
+        "公众号排版",
+        "Markdown转HTML",
+        "排版",
+        "公众号文章"
+      ],
+      "required_inputs": [
+        "markdown_content"
+      ],
+      "outputs": [
+        "styled_html"
+      ],
+      "companions": [
+        "san-content"
+      ]
+    },
+    {
+      "id": "san-ai-check",
+      "file": "san-ai-check.md",
+      "role": "gate",
+      "category": "compliance",
+      "signals": [
+        "AI检测",
+        "AI痕迹",
+        "是不是AI写的",
+        "ai check"
+      ],
+      "required_inputs": [
+        "text"
+      ],
+      "outputs": [
+        "ai_score",
+        "humanization_tips"
+      ],
+      "companions": [
+        "san-content"
+      ]
+    }
+  ]
+}
